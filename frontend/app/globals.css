@@ -1,0 +1,758 @@
+@import "tailwindcss";
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+}
+
+body {
+  background: #050b10;
+  color: #f4f7f8;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+button {
+  font: inherit;
+}
+
+/* =========================
+   APP
+========================= */
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  background:
+    radial-gradient(
+      circle at 70% 20%,
+      rgba(0, 255, 170, 0.05),
+      transparent 30%
+    ),
+    #050b10;
+}
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.sidebar {
+  width: 250px;
+  min-height: 100vh;
+  padding: 24px 16px;
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(5, 12, 18, 0.96);
+  display: flex;
+  flex-direction: column;
+}
+
+.brand {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding: 4px 8px 28px;
+}
+
+.brand-logo {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  background: rgba(0, 255, 170, 0.1);
+  color: #19e68c;
+  font-size: 23px;
+}
+
+.brand h1 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.brand h1 span {
+  color: #19e68c;
+}
+
+.brand p {
+  margin: 4px 0 0;
+  font-size: 11px;
+  color: #71808b;
+}
+
+/* =========================
+   NAVIGATION
+========================= */
+
+.navigation {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.nav-item {
+  border: 0;
+  background: transparent;
+  color: #82909a;
+  padding: 13px 14px;
+  border-radius: 9px;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  transition: 0.2s;
+}
+
+.nav-item:hover {
+  background: rgba(255, 255, 255, 0.04);
+  color: white;
+}
+
+.nav-item.active {
+  background: linear-gradient(
+    90deg,
+    rgba(120, 72, 255, 0.25),
+    rgba(120, 72, 255, 0.08)
+  );
+  color: white;
+  border-left: 3px solid #9b72ff;
+}
+
+.nav-icon {
+  width: 20px;
+  text-align: center;
+  color: #9b72ff;
+}
+
+/* =========================
+   STATUS
+========================= */
+
+.system-card {
+  margin-top: auto;
+  padding: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 12px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.status-dot {
+  width: 9px;
+  height: 9px;
+  background: #19e68c;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #19e68c;
+}
+
+.system-card p {
+  margin: 0;
+  font-size: 12px;
+  color: #dce3e7;
+}
+
+.system-card span {
+  display: block;
+  margin-top: 4px;
+  color: #19e68c;
+  font-size: 11px;
+}
+
+.operator-card {
+  margin-top: 14px;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.operator-avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #26313a;
+  display: grid;
+  place-items: center;
+}
+
+.operator-card strong {
+  display: block;
+  font-size: 12px;
+}
+
+.operator-card span {
+  color: #71808b;
+  font-size: 10px;
+}
+
+.operator-card .arrow {
+  margin-left: auto;
+}
+
+/* =========================
+   CONTENT
+========================= */
+
+.content {
+  flex: 1;
+  padding: 28px;
+  min-width: 0;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 26px;
+}
+
+.page-title-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.page-title-row h2 {
+  margin: 0;
+  font-size: 27px;
+}
+
+.subtitle {
+  margin: 7px 0 0;
+  color: #6f7e88;
+  font-size: 13px;
+}
+
+.live-status {
+  color: #19e68c;
+  font-size: 12px;
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.live-status span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #19e68c;
+}
+
+.top-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.time-box {
+  padding: 9px 15px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+}
+
+.time-box strong,
+.time-box span {
+  display: block;
+}
+
+.time-box strong {
+  font-size: 13px;
+}
+
+.time-box span {
+  margin-top: 3px;
+  font-size: 10px;
+  color: #6f7e88;
+}
+
+.end-button {
+  border: 1px solid rgba(255, 70, 70, 0.3);
+  background: rgba(255, 50, 50, 0.07);
+  color: #ff5e5e;
+  padding: 12px 15px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* =========================
+   GRID
+========================= */
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(310px, 1fr);
+  gap: 18px;
+}
+
+.camera-card,
+.summary-card,
+.detections-card,
+.cost-card,
+.session-card {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: linear-gradient(
+    145deg,
+    rgba(13, 24, 32, 0.95),
+    rgba(6, 14, 20, 0.95)
+  );
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.camera-card {
+  min-height: 490px;
+}
+
+.card-header {
+  padding: 17px 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.card-header h3 {
+  margin: 0;
+  font-size: 15px;
+}
+
+.card-header p {
+  margin: 4px 0 0;
+  color: #65747e;
+  font-size: 11px;
+}
+
+.recording {
+  color: #19e68c;
+  font-size: 11px;
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.recording span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #19e68c;
+}
+
+/* =========================
+   CAMERA
+========================= */
+
+.camera-screen {
+  position: relative;
+  height: 400px;
+  margin: 15px;
+  border-radius: 11px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  background:
+    linear-gradient(
+      rgba(0, 20, 30, 0.45),
+      rgba(0, 15, 20, 0.75)
+    ),
+    repeating-linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.025) 0,
+      rgba(255, 255, 255, 0.025) 1px,
+      transparent 1px,
+      transparent 4px
+    );
+}
+
+.camera-placeholder {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.camera-icon {
+  font-size: 42px;
+  color: #19e68c;
+  margin-bottom: 12px;
+}
+
+.camera-placeholder h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.camera-placeholder p {
+  color: #687883;
+  font-size: 12px;
+}
+
+.start-button {
+  margin-top: 10px;
+  border: 0;
+  padding: 11px 20px;
+  border-radius: 8px;
+  background: #19d986;
+  color: #03120b;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.camera-info {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  right: 12px;
+  display: flex;
+  justify-content: space-between;
+  color: #84929a;
+  font-size: 10px;
+}
+
+/* =========================
+   SUMMARY
+========================= */
+
+.summary-card {
+  min-height: 225px;
+}
+
+.total-detected {
+  color: #b38cff;
+  font-size: 11px;
+}
+
+.severity-grid {
+  padding: 18px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.severity {
+  padding: 15px 10px;
+  border-radius: 10px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.severity-icon {
+  width: 30px;
+  height: 30px;
+  margin: auto;
+  display: grid;
+  place-items: center;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+.severity strong {
+  display: block;
+  margin-top: 9px;
+  font-size: 22px;
+}
+
+.severity p {
+  margin: 4px 0 0;
+  font-size: 10px;
+  color: #7b8991;
+}
+
+.critical {
+  background: rgba(255, 50, 50, 0.06);
+}
+
+.critical .severity-icon {
+  background: rgba(255, 50, 50, 0.16);
+  color: #ff5252;
+}
+
+.high {
+  background: rgba(255, 170, 0, 0.05);
+}
+
+.high .severity-icon {
+  background: rgba(255, 170, 0, 0.15);
+  color: #ffb000;
+}
+
+.medium {
+  background: rgba(255, 215, 0, 0.04);
+}
+
+.medium .severity-icon {
+  background: rgba(255, 215, 0, 0.12);
+  color: #ffd000;
+}
+
+/* =========================
+   DETECTIONS
+========================= */
+
+.detections-card {
+  min-height: 280px;
+}
+
+.detection-count {
+  font-size: 11px;
+  color: #77858e;
+}
+
+.empty-state {
+  height: 190px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.empty-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: rgba(25, 230, 140, 0.08);
+  color: #19e68c;
+  font-size: 25px;
+}
+
+.empty-state h3 {
+  margin: 12px 0 4px;
+  font-size: 13px;
+}
+
+.empty-state p {
+  margin: 0;
+  font-size: 11px;
+  color: #697983;
+}
+
+/* =========================
+   COST
+========================= */
+
+.cost-card {
+  min-height: 280px;
+}
+
+.cost-icon {
+  width: 35px;
+  height: 35px;
+  display: grid;
+  place-items: center;
+  border-radius: 9px;
+  color: #19e68c;
+  background: rgba(25, 230, 140, 0.08);
+}
+
+.cost-value {
+  padding: 28px 20px 15px;
+  font-size: 34px;
+  font-weight: 700;
+  color: #19e68c;
+}
+
+.cost-footer {
+  margin: 0 20px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  display: flex;
+  justify-content: space-between;
+  color: #66757e;
+  font-size: 10px;
+}
+
+/* =========================
+   SESSION
+========================= */
+
+.session-card {
+  grid-column: 1 / -1;
+}
+
+.session-actions {
+  padding: 17px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.session-actions button {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.025);
+  color: #d8dfe2;
+  padding: 18px;
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 9px;
+  font-size: 11px;
+}
+
+.session-actions button:hover {
+  border-color: rgba(25, 230, 140, 0.4);
+  background: rgba(25, 230, 140, 0.05);
+}
+
+.session-actions span {
+  color: #19e68c;
+  font-size: 21px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1000px) {
+  .sidebar {
+    width: 210px;
+  }
+
+  .content {
+    padding: 20px;
+  }
+
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .session-card {
+    grid-column: auto;
+  }
+}
+
+@media (max-width: 700px) {
+  .sidebar {
+    display: none;
+  }
+
+  .topbar {
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .top-actions {
+    width: 100%;
+  }
+
+  .time-box,
+  .end-button {
+    flex: 1;
+  }
+
+  .severity-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .session-actions {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+
+/* STEP 2 VIDEO SYSTEM */
+
+.camera-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.upload-button,
+.change-video {
+  border: 1px solid rgba(25, 230, 140, 0.35);
+  background: rgba(25, 230, 140, 0.06);
+  color: #19e68c;
+  padding: 11px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.upload-button:hover,
+.change-video:hover {
+  background: rgba(25, 230, 140, 0.12);
+}
+
+.active-recording {
+  color: #ff4d5a !important;
+}
+
+.active-recording span {
+  background: #ff4d5a !important;
+  box-shadow: 0 0 10px #ff4d5a;
+}
+
+.road-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  background: #000;
+}
+
+.video-controls {
+  display: flex;
+  gap: 8px;
+  padding: 0 15px 15px;
+}
+
+.video-controls button,
+.change-video {
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  background: rgba(255, 255, 255, 0.035);
+  color: #cbd4d8;
+  padding: 9px 13px;
+  border-radius: 7px;
+  cursor: pointer;
+  font-size: 11px;
+}
+
+.video-controls button:hover {
+  border-color: rgba(25, 230, 140, 0.4);
+}
+
+.video-controls .stop-camera {
+  color: #ff6262;
+  border-color: rgba(255, 80, 80, 0.25);
+}
+
+.change-video {
+  color: #19e68c;
+}
+
+.detection-box {
+  position: absolute;
+  border: 2px solid #ff3b30;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.detection-box span {
+  position: absolute;
+  top: -24px;
+  left: -2px;
+  background: #ff3b30;
+  color: white;
+  padding: 3px 7px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 700;
+  white-space: nowrap;
+}
