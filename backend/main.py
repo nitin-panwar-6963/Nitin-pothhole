@@ -26,11 +26,8 @@ os.makedirs("temp_uploads", exist_ok=True)
 
 DRONE_IP_CAM_URL = "http://192.168.1.2:8080/video"
 
-# ---------------------------------------------------------------------------
-# MAINTENANCE COST ESTIMATION CONFIG
-# ---------------------------------------------------------------------------
-# NOTE: Bina depth-sensor/stereo-camera/LiDAR ke asli depth measure nahi ho
-# sakti sirf ek normal RGB camera se. Isliye depth ko bounding-box area aur
+# MAINTENANCE COST ESTIMATION MANAGEMENT
+
 # YOLO confidence se heuristically estimate kar rahe hain (bada aur zyada
 # confident detection = zyada gehra gaddha, generally true in practice).
 # Width/Breadth bounding box ke pixel size ko real-world cm me convert karke
